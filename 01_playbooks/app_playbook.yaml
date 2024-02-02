@@ -1,0 +1,29 @@
+---
+
+- hosts: rhel_line
+  tasks:
+  - name: dnf update
+    ansible.builtin.dnf:
+      update_cache: true
+
+- hosts: debian_line
+  tasks:
+  - name: apt update
+    become: true
+    ansible.builtin.apt:
+      update_cache: true
+
+- hosts: all
+  tasks:
+  - name: install apps
+    become: true
+    ansible.builtin.package:
+      name:
+      - curl
+      - wget
+      - rsync
+      - vim
+      - git
+      - tmux
+      - unzip
+      state: latest
