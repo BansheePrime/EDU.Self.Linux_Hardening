@@ -1,0 +1,37 @@
+alma:
+  hosts:
+    ansible_host: 192.168.56.10
+    ansible_port: 2110
+    ansible_ssh_user: vagrant
+    ansible_ssh_private_key_file: ./.vagrant/machines/alma9/virtualbox/private_key
+
+debian:
+  hosts:
+    ansible_host: 192.168.56.12
+    ansible_port: 2112
+    ansible_ssh_user: vagrant
+    ansible_ssh_private_key_file: ./.vagrant/machines/debian12/virtualbox/private_key
+
+rocky:
+  hosts:
+    ansible_host: 192.168.56.13
+    ansible_port: 2113
+    ansible_ssh_user: vagrant
+    ansible_ssh_private_key_file: ./.vagrant/machines/rocky9/virtualbox/private_key
+
+ubuntu:
+  hosts:
+    ansible_host: 192.168.56.14
+    ansible_port: 2114
+    ansible_ssh_user: vagrant
+    ansible_ssh_private_key_file: ./.vagrant/machines/ubuntu2204/virtualbox/private_key
+
+rhel_line:
+  children:
+    alma:
+    rocky:
+
+debian_line:
+  children:
+    debian:
+    ubuntu:
