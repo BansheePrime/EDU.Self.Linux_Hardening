@@ -15,4 +15,4 @@ Rocky 9: "192.168.56.13": 2113
 Ubuntu 22.04 (LTS): "192.168.56.14": 2114
 
 ### ping
-ansible servers -m ansible.builtin.ping
+ansible all -i inventory.yaml -m ansible.builtin.ping
