@@ -6,6 +6,14 @@
     ansible.builtin.dnf:
       update_cache: true
 
+- hosts: rhel_line
+  tasks:
+  - name: Install epel package
+    become: true
+    yum:
+      name: epel-release
+      state: present
+
 - hosts: debian_line
   tasks:
   - name: apt update
