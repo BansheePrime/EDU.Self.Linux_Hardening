@@ -16,3 +16,8 @@ Ubuntu 22.04 (LTS): "192.168.56.14": 2114
 
 ### ping
 ansible all -i inventory.yaml -m ansible.builtin.ping
+
+### phoenixnap about ssh troubles:
+<https://phoenixnap.com/kb/ssh-permission-denied-publickey>  
+
+###
