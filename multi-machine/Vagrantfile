@@ -1,0 +1,60 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+RAM = 2048
+CPU = 1
+GUEST = 22
+ID = "ssh"
+PLAYBOOK = "playbook.yaml"
+
+servers=[
+{
+    :hostname => "alma",
+    :ip => "192.168.56.10",
+    :box => "alma9",
+    # :ram => 2048,
+    # :cpu => 1,
+    # :guest => 22
+    :port => 2210
+    # :id => "ssh"
+    # :playbook => "playbook.yaml"
+  },
+  {
+    :hostname => "debian",
+    :ip => "192.168.56.12",
+    :box => "debian12",
+    :port => 2212
+  },
+  {
+    :hostname => "rocky",
+    :ip => "192.168.56.13",
+    :box => "rocky9",
+    :port => 2213
+  },
+  {
+    :hostname => "ubuntu",
+    :ip => "192.168.56.14",
+    :box => "ubuntu2204",
+    :port => 2214
+  }
+]
+
+Vagrant.configure(2) do |config|
+    servers.each do |server|
+        config.vm.define server[:hostname] do |node|
+            node.vm.define server[:hostname]
+            node.vm.box = server[:box]
+            node.vm.hostname = server[:hostname]
+            node.vm.network "private_network", ip: server[:ip]
+            node.vm.network "forwarded_port", guest: GUEST, host: server[:port], id: ID
+            node.vm.provider "virtualbox" do |vb|
+                vb.name = server[:hostname]
+                vb.customize ["modifyvm", :id, "--memory", RAM]
+                vb.customize ["modifyvm", :id, "--cpus", CPU]
+            end
+            node.vm.provision "ansible" do |ansible|
+                ansible.playbook = PLAYBOOK
+            end
+        end
+    end
+end

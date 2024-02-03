@@ -1,0 +1,15 @@
+---
+- hosts: all
+  vars:
+    - username: gidra
+    - home: /home/gidra   
+  tasks:
+    - name: print variables
+      debug:
+        msg: "Username: {{ username }}, Home dir: {{ home }}"
+
+    - name: ensure sshd is started and enabled
+      service:
+        name: sshd
+        state: started
+        enabled: yes
