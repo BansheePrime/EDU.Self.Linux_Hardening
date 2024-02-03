@@ -1,0 +1,48 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2024-02-03 16:58 MSK
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 16:58
+Completed NSE at 16:58, 0.00s elapsed
+Initiating NSE at 16:58
+Completed NSE at 16:58, 0.00s elapsed
+Initiating NSE at 16:58
+Completed NSE at 16:58, 0.00s elapsed
+Initiating Ping Scan at 16:58
+Scanning 192.168.56.14 [2 ports]
+Completed Ping Scan at 16:58, 0.00s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 16:58
+Completed Parallel DNS resolution of 1 host. at 16:58, 0.00s elapsed
+Initiating Connect Scan at 16:58
+Scanning 192.168.56.14 [1000 ports]
+Discovered open port 22/tcp on 192.168.56.14
+Completed Connect Scan at 16:58, 0.01s elapsed (1000 total ports)
+Initiating Service scan at 16:58
+Scanning 1 service on 192.168.56.14
+Completed Service scan at 16:58, 0.01s elapsed (1 service on 1 host)
+NSE: Script scanning 192.168.56.14.
+Initiating NSE at 16:58
+Completed NSE at 16:58, 0.07s elapsed
+Initiating NSE at 16:58
+Completed NSE at 16:58, 0.00s elapsed
+Initiating NSE at 16:58
+Completed NSE at 16:58, 0.00s elapsed
+Nmap scan report for 192.168.56.14
+Host is up (0.000089s latency).
+Not shown: 999 closed tcp ports (conn-refused)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.6 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   256 fa:43:a5:5b:61:9f:73:39:23:f2:51:45:24:6f:14:ea (ECDSA)
+|_  256 cf:17:38:53:ac:c0:ad:1c:c6:de:0b:3a:e6:76:a2:c8 (ED25519)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+NSE: Script Post-scanning.
+Initiating NSE at 16:58
+Completed NSE at 16:58, 0.00s elapsed
+Initiating NSE at 16:58
+Completed NSE at 16:58, 0.00s elapsed
+Initiating NSE at 16:58
+Completed NSE at 16:58, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 0.35 seconds
