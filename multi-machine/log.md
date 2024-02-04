@@ -11,3 +11,15 @@ host 192.168.56.2*
 ansible all -i inventory.yaml -a 'sudo --version'
 ```
 
+### running app playbook
+ansible-playbook ../01_playbooks/app_playbook.yaml -i inventory.yaml
+
+### vagrant ssh trail and tribs
+```bash
+sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
+
+sudo systemctl restart sshd;
+```
+
+### my solution
+ssh-copy-id to localhost
