@@ -23,3 +23,7 @@ sudo systemctl restart sshd;
 
 ### my solution
 ssh-copy-id to localhost
+
+### PerformanceTest Linux
+<https://www.passmark.com/support/pt_linux_faq.php>
+<https://www.passmark.com/downloads/bitlinux.tar.gz>
