@@ -10,6 +10,7 @@
       loop:
         - curl
         - wget
+        - tree
         - unzip
         - rsync
         - git
