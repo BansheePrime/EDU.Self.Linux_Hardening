@@ -47,3 +47,13 @@ sudo vim /etc/ssh/sshd_config
 `DebianBanner no`
 sudo sshd -t
 sudo systemctl reload sshd.service
+
+
+### ufw
+<https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands>
+
+`sudo ufw status`
+`sudo ufw app list`
+`sudo ufw allow 'OpenSSH'`
+`sudo ufw status numbered`
+`sudo ufw enable`
